@@ -5,69 +5,16 @@
 soong_namespace {
 }
 
-cc_prebuilt_library_shared {
-	name: "libem_support_jni",
+dex_import {
+	name: "mediatek-framework-net",
 	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/lib/libem_support_jni.so"],
-		},
-		android_arm64: {
-			srcs: ["proprietary/lib64/libem_support_jni.so"],
-		},
-	},
-	compile_multilib: "both",
-	check_elf_files: false,
-	prefer: true,
-}
-
-android_app_import {
-	name: "EngineerMode",
-	owner: "xiaomi",
-	apk: "proprietary/priv-app/EngineerMode/EngineerMode.apk",
-	certificate: "platform",
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
-}
-
-android_app_import {
-	name: "ImsService",
-	owner: "xiaomi",
-	apk: "proprietary/priv-app/ImsService/ImsService.apk",
-	certificate: "platform",
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
+	jars: ["proprietary/framework/mediatek-framework-net.jar"],
 }
 
 dex_import {
-	name: "mediatek-common",
+	name: "mediatek-gwsdv2",
 	owner: "xiaomi",
-	jars: ["proprietary/framework/mediatek-common.jar"],
-}
-
-dex_import {
-	name: "mediatek-framework",
-	owner: "xiaomi",
-	jars: ["proprietary/framework/mediatek-framework.jar"],
-}
-
-dex_import {
-	name: "mediatek-ims-base",
-	owner: "xiaomi",
-	jars: ["proprietary/framework/mediatek-ims-base.jar"],
-}
-
-dex_import {
-	name: "mediatek-ims-common",
-	owner: "xiaomi",
-	jars: ["proprietary/framework/mediatek-ims-common.jar"],
+	jars: ["proprietary/framework/mediatek-gwsdv2.jar"],
 }
 
 dex_import {
@@ -83,20 +30,14 @@ dex_import {
 }
 
 dex_import {
-	name: "mediatek-telecom-common",
+	name: "mediatek-services",
 	owner: "xiaomi",
-	jars: ["proprietary/framework/mediatek-telecom-common.jar"],
+	jars: ["proprietary/framework/mediatek-services.jar"],
 }
 
 dex_import {
-	name: "mediatek-telephony-base",
+	name: "mediatek-wfo-legacy",
 	owner: "xiaomi",
-	jars: ["proprietary/framework/mediatek-telephony-base.jar"],
-}
-
-dex_import {
-	name: "mediatek-telephony-common",
-	owner: "xiaomi",
-	jars: ["proprietary/framework/mediatek-telephony-common.jar"],
+	jars: ["proprietary/framework/mediatek-wfo-legacy.jar"],
 }
 
